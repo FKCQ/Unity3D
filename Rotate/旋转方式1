@@ -1,0 +1,11 @@
+IEnumerator Rotating2()
+{
+    Quaternion startDirection = transform.localRotation;
+    Quaternion targetDirection = Quaternion.Euler(new Vector3(0, transform.eulerAngles.y + 90f, 0));//将旋转度数(Inspector的rotation)转化为四元数
+    while (transform.localRotation != targetDirection)
+    {
+        rTiming += Time.deltaTime;
+        transform.localRotation = Quaternion.Lerp(startDirection, targetDirection, rTiming);
+        yield return null;
+    }
+}
