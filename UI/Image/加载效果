@@ -1,0 +1,8 @@
+IEnumerator LoadingEffect()
+{
+    while(image.fillAmount != 1)
+    {
+        image.fillAmount += Time.deltaTime / speed;
+        yield return null;
+    }
+}
