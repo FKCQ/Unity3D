@@ -1,0 +1,11 @@
+IEnumerator TypeEffect()
+{
+    text.text = string.Empty;
+    int currentIndex = 0;
+    while (currentIndex < content.Length)
+    {
+        text.text += content[currentIndex];
+        currentIndex++;
+        yield return null;
+    }
+}
