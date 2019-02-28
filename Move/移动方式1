@@ -1,0 +1,13 @@
+IEnumerator Moving()
+{
+    while (transform.position != targetPosition)
+    {
+        timing += Time.deltaTime;
+        transform.position = Vector3.Lerp(startPosition, targetPosition, timing);
+
+            yield return null;
+    }
+
+    board.enabled = true;
+    StartCoroutine(Waiting());
+}
